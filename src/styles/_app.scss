@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
-$width: 50rem;
+$width: 49rem;
 /* Primary */
 
 $d-red: hsl(0, 36%, 70%);
@@ -21,7 +21,10 @@ $L2b: hsl(0, 74%, 74%);
 
 .App {
   display: flex;
+
   min-width: 100%;
+  min-height: 100%;
+  margin: auto;
   flex-direction: column;
   background: linear-gradient(135deg, $L1a, $L1b);
   //background-repeat: no-repeat;
@@ -40,7 +43,7 @@ header {
 
   button {
     border-radius: 2.5rem 2.5rem 2.5rem 2.5rem;
-    width: 6rem;
+    width: 8rem;
     position: relative;
     border: none;
     box-shadow: 0.2rem 1rem 5rem 0rem $d-red;
@@ -77,6 +80,19 @@ header {
     font-weight: 350;
   }
 }
+.hero {
+  flex: 1 1 33%;
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+}
+.content {
+  flex: 1 1 66%;
+}
+
+.hero-mobile {
+  width: 100%;
+}
 .text {
   margin-top: 4rem;
   padding: 0 2rem;
@@ -88,7 +104,7 @@ header {
   line-height: 0.85;
 
   .title {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     letter-spacing: 1rem;
     flex-direction: column;
     text-transform: uppercase;
@@ -107,38 +123,59 @@ header {
   p {
     text-align: center;
     line-height: 1.5;
-    width: 36ch;
+    max-width: 36ch;
     color: $d-red;
     font-size: 1.2rem;
   }
 }
 @media (min-width: $width) {
+  .App {
+    flex-direction: row;
+  }
   .page {
     flex-direction: row;
   }
-  .leftside {
-    background-image: url(../../public/images/bg-pattern-desktop.svg);
-    background-position: left;
-    background-size: contain;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 100%;
-  }
-  .hero {
-    display: flex;
-    justify-content: flex-end;
-    flex-shrink: 2;
-    img {
-      height: 100vh;
-      width: auto;
-      content: url(../../public/images/hero-desktop.jpg);
-      flex-shrink: 2;
-    }
-  }
   .main-title {
-    margin-left: 5rem;
+  }
+  .content {
+    padding-right: 18%;
+    padding-left: 12%;
+  }
+  .email {
+    padding: 0;
+  }
+  email button {
+    width: 6rem;
+  }
+
+  .text {
+    line-height: 0.85;
+    text-align: start;
+
+    .title {
+      font-size: 4.5rem;
+      letter-spacing: 1rem;
+      flex-direction: column;
+      text-transform: uppercase;
+      display: flex;
+      width: 100%;
+      line-height: 1;
+    }
+    .text-body {
+      margin: 2rem 0 3rem 0;
+    }
+    span {
+      color: $d-red;
+      letter-spacing: 1rem;
+      font-weight: 300;
+    }
+
+    p {
+      text-align: start;
+      line-height: 1.5;
+      min-width: 100%;
+      color: $d-red;
+      font-size: 1.2rem;
+    }
   }
 }
