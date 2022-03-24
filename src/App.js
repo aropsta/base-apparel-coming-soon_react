@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import breakPointObserver from "./breakPointObserver";
-import "./styles/_app.scss";
+import "./styles/app.scss";
 
 //nice code!
 //const breakPoints = {
