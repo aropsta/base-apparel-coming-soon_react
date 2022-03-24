@@ -16,6 +16,8 @@ const breakPoints = {
 
 function App() {
   const [breakPoint, isBreakPoint] = useState();
+  const [validForm, setValidForm] = useState(true);
+  const [value, setValue] = useState("");
 
   useEffect(() => {
     breakPointObserver(breakPoints, isBreakPoint);
@@ -63,6 +65,12 @@ function App() {
     }
   };
 
+  const onChange = (a) => {
+    setValue(a.target.value);
+    console.log(value);
+  };
+
+  const formSubmit = (e) => {};
   return (
     <div className="App">
       {getMarkup("mobileHeader")}
@@ -79,9 +87,15 @@ function App() {
             below to stay up-to-date with announcements and our launch deals.
           </p>
         </section>
-        <form className="email">
-          <label></label>
-          <input id="email" placeholder="Email Address" type="email" />
+        <form className="email" onSubmit={(e) => formSubmit(e)}>
+          <label className="sr-only">Enter email address</label>
+          <input
+            onChange={(e) => onChange(e)}
+            id="email"
+            placeholder="Email Address"
+            type="email"
+            value={value}
+          />
 
           <button className="button"></button>
         </form>
