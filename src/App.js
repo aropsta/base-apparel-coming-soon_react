@@ -16,6 +16,7 @@ const breakPoints = {
 
 function App() {
   const [breakPoint, isBreakPoint] = useState();
+
   useEffect(() => {
     breakPointObserver(breakPoints, isBreakPoint);
   }, [breakPoint]);
