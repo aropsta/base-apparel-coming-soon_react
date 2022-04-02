@@ -99,7 +99,7 @@ function App() {
             value={value}
           />
 
-          <button className="button"></button>
+          <button aria-label="Submit email" className="button"></button>
         </form>
       </div>
       {getMarkup("img")}
